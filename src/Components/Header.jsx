@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import SideBar from "./SideBar";
 
-export default function Header() {
-    const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div className=" bg-blue-700 w-50">
-        <GiHamburgerMenu className="text-xl" onClick={()=>{setIsOpen(true)}} />
-    </div>
-  );
-}
+export default function Header({toggleSidebar}) {
+    return (
+      <div className=" p-3 flex items-center justify-between">
+          <GiHamburgerMenu  onClick={toggleSidebar}    className="text-xl" /> 
+          <img src=""  className=" w-8 h-8 rounded-full border " />
+          
+            
+      </div>
+    );
+   
+    }

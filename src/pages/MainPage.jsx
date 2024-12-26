@@ -1,31 +1,36 @@
-import React, { useState } from "react";
-import Header from "../Components/Header";
-import SideBar from "../Components/SideBar";
-import Main from "../Components/Main";
+import React from "react";
+import Layout from "../Components/Layout";
+import { reportData } from "../utils/constants";
 
-export default function MainPage() {
-  const [showSidebar, setShowSidebar] = useState(false);
-
-  const toggleSidebar = () => {
-    setShowSidebar(!showSidebar);
-  };
-
+const MainPage = () => {
+  const selectedMenu = ["Didiyos", ">", "Menu", ">", "Dashboard"];
   return (
-    <div className=" flex ">
-      <SideBar showSidebar={showSidebar}  setShowSidebar={setShowSidebar}/>
-      <div>
-        {showSidebar && (
-          <div onClick={toggleSidebar} className="fixed inset-0 bg-black bg-opacity-40
-          z-50 ">
+    <Layout>
+      <div className="p-4">
+        <h1 className="text-3xl font-semibold text-[#9B9895] mb-6">
+          Dashboard
+        </h1>
+        <div className="flex gap-3  text-[#9B9895] text-lg font-semibold ml-3">
+          {selectedMenu.map((item, i) => (
+            <p key={i}>{item} </p>
+          ))}
+        </div>
 
-          </div>
-        )}
+        <div className="mt-6 ">
+          {reportData.map((data, i) => (
+            <div className="bg-red-300 p-4 ">
+              <h1>{data.title}</h1>
+              <p>{data.value}</p>
+              <div className="flex gap-2">
+                <span>{data.percent}</span>
+                <span>{data.time}</span>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className=" w-full">
-
-        <Header toggleSidebar={toggleSidebar} />
-        <Main />
-      </div>
-    </div>
+    </Layout>
   );
-}
+};
+
+export default MainPage;

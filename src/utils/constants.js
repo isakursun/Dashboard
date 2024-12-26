@@ -9,3 +9,30 @@ export const list = [
   { title: "Report Management", icon: <IoIosPricetags />, path: "" },
   { title: "Event Management", icon: <FaChartArea />, path: "" },
 ];
+
+export const reportData = [
+  {
+    title: "online count",
+    value: "1,587",
+    percent: "+11%",
+    time: "from previous period",
+  },
+  {
+    title: "online count",
+    value: "1,587",
+    percent: "-29%",
+    time: "from previous period",
+  },
+  {
+    title: "online count",
+    value: "1,587",
+    percent: "0%",
+    time: "from previous period",
+  },
+  {
+    title: "online count",
+    value: "1,587",
+    percent: "+89%",
+    time: "from previous period",
+  },
+];

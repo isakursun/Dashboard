@@ -2,8 +2,9 @@ import React from "react";
 import { useState } from "react";
 import Header from "../Components/Header";
 import SideBar from "../Components/SideBar";
+import Footer from "./Footer";
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   const [showSidebar, setShowSidebar] = useState(false);
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
@@ -21,9 +22,10 @@ const Layout = ({children}) => {
           ></div>
         )}
       </div>
-      <div className=" w-full">
+      <div className={`w-full transition-all flex min-h-screen flex-col duration-700 ${showSidebar ? ' sm:ml-64' : ""} ` }>
         <Header toggleSidebar={toggleSidebar} />
-      <main>{children}</main>
+        <main className=" flex-grow bg-[#F3F4F6]">{children}</main>
+        <Footer/>
       </div>
     </div>
   );

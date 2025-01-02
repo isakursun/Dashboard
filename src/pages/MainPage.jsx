@@ -16,9 +16,9 @@ const MainPage = () => {
           ))}
         </div>
 
-        <div className="mt-6 ">
+        <div className="mt-6 grid xl:grid-cols-4 grid-cols-1 md:grid-cols-2 gap-3  ">
           {reportData.map((data, i) => (
-            <div className="bg-red-300 p-4 ">
+            <div className="bg-[#fff] p-4 rounded-md ">
               <h1>{data.title}</h1>
               <p>{data.value}</p>
               <div className="flex gap-2">
@@ -30,6 +30,7 @@ const MainPage = () => {
         </div>
       </div>
     </Layout>
+    
   );
 };
 

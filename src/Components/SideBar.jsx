@@ -7,7 +7,7 @@ export default function SideBar({ showSidebar}) {
   console.log(showSidebar);
   return (
     <div
-    className={` z-[70] fixed top-0 left-0 h-screen bg-[#F3F4F6] p-7 transition-transform duration-700 ${
+    className={` z-[70] fixed top-0 left-0 h-screen bg-[#F3F4F6] p-7 transition-transform duration-700 w-64 ${
       showSidebar ? "translate-x-0" : "-translate-x-full"
     }`}
     >
